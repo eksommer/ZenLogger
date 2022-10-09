@@ -1,0 +1,18 @@
+  GNU nano 5.4                                                                        autostart *
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+
+#cat << 'EOF' > /etc/xdg/lxsession/LXDE-pi/autostart
+# disable screen blank
+@xset s noblank
+@xset s off
+@xset -dpms
+
+# disable cursor
+@unclutter -idle 0
+
+# run chrome
+@chromium-browser --kiosk --check-for-update-interval=31536000 --disable-component-update --disable-restore-session-state --disable-features=TranslateUI --disable-session-cras>
+EOF
+
